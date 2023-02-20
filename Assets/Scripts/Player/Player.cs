@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,21 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody2D myRigidBody2D;
     //[SerializeField]
 
+    [Header("Points")]
+    [SerializeField] private int _currentPoints;
+    [SerializeField] private TextMeshProUGUI uiTextPoints;
+
+
+    private void Awake()
+    {
+        ResetPlayer();
+    }
+
+    private void ResetPlayer()
+    {
+        _currentPoints = 0;
+        UpdateUI();
+    }
 
     void Update()
     {
@@ -21,5 +37,16 @@ public class Player : MonoBehaviour
         {
             myRigidBody2D.MovePosition(transform.position + transform.up * -_speed);
         }
+    }
+
+    public void AddPoint()
+    {
+        _currentPoints++;
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        uiTextPoints.text = _currentPoints.ToString();
     }
 }

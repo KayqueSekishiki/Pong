@@ -5,11 +5,22 @@ using UnityEngine;
 public class BallBase : MonoBehaviour
 {
     [SerializeField] Vector3 _speed;
+    [SerializeField] Vector3 _startSpeed;
+
     [SerializeField] string _keyToCheck = "Player";
 
     [Header("Randomize")]
     [SerializeField] Vector2 _randSpeedX;
     [SerializeField] Vector2 _randSpeedY;
+
+    private Vector3 _startPosition;
+
+
+    private void Awake()
+    {
+        _startPosition = transform.position;
+        _startSpeed = _speed;
+    }
 
     void Update()
     {
@@ -44,5 +55,11 @@ public class BallBase : MonoBehaviour
         rand = Random.Range(_randSpeedY.x, _randSpeedY.x);
         _speed.y = rand;
 
+    }
+
+    public void ResetBall()
+    {
+        transform.position = _startPosition;
+        _speed = _startSpeed;
     }
 }
