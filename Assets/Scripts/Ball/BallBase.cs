@@ -14,6 +14,7 @@ public class BallBase : MonoBehaviour
     [SerializeField] Vector2 _randSpeedY;
 
     private Vector3 _startPosition;
+    private bool _canMove = false;
 
 
     private void Awake()
@@ -24,6 +25,8 @@ public class BallBase : MonoBehaviour
 
     void Update()
     {
+
+        if (!_canMove) return;
         transform.Translate(_speed);
     }
 
@@ -61,5 +64,10 @@ public class BallBase : MonoBehaviour
     {
         transform.position = _startPosition;
         _speed = _startSpeed;
+    }
+
+    public void CanMove(bool state)
+    {
+        _canMove = state;
     }
 }

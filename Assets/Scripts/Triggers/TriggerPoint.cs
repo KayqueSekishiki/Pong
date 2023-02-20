@@ -5,7 +5,6 @@ using UnityEngine;
 public class TriggerPoint : MonoBehaviour
 {
     [SerializeField] private Player _player;
-
     [SerializeField] private string _tagtoCheck = "Ball";
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,7 +17,7 @@ public class TriggerPoint : MonoBehaviour
 
     private void CountPoint()
     {
-        GameManager.Instance.ResetBallPosition();
+        StateMachine.Instance.ResetPosition();
         _player.AddPoint();
     }
 }
