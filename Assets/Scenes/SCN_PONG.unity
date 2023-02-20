@@ -773,7 +773,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: {x: 1, y: 1, z: 0}
-  keyToCheck: Player
+  _keyToCheck: Player
+  _randSpeedX: {x: 1, y: 2}
+  _randSpeedY: {x: -3, y: 3}
 --- !u!1001 &867579321587988780
 PrefabInstance:
   m_ObjectHideFlags: 0
