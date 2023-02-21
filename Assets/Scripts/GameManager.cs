@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BallBase _ballBase;
     [SerializeField] private float _timeToSetBallFree = 1f;
 
-
+    [SerializeField] private Player[] _players;
 
     [Header("Menus")]
     [SerializeField] private GameObject _uiMainMenu;
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        _players = FindObjectsOfType<Player>();
     }
 
     public void ResetBall()
@@ -26,6 +27,14 @@ public class GameManager : MonoBehaviour
         _ballBase.CanMove(false);
         _ballBase.ResetBall();
         Invoke(nameof(SetBallFree), _timeToSetBallFree);
+    }
+
+    public void ResetPlayers()
+    {
+        foreach (Player _player in _players)
+        {
+            _player.ResetPlayer();
+        }
     }
 
     private void SetBallFree()

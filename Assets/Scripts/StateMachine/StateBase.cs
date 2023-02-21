@@ -41,6 +41,7 @@ public class StateEndGame : StateBase
     public override void OnStateEnter(object o = null)
     {
         base.OnStateEnter(o);
+        GameManager.Instance.ResetPlayers();
         GameManager.Instance.ShowMainMenu();
     }
 }

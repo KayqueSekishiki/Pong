@@ -6,6 +6,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    public string _playerName;
     [SerializeField] private int _maxPoints;
     [SerializeField] private float _speed;
     [SerializeField] private Image _uiPlayer;
@@ -25,11 +26,17 @@ public class Player : MonoBehaviour
         ResetPlayer();
     }
 
-    private void ResetPlayer()
+    public void SetName(string s)
+    {
+        _playerName = s;
+    }
+
+    public void ResetPlayer()
     {
         _currentPoints = 0;
         UpdateUI();
     }
+
 
     void Update()
     {
@@ -65,6 +72,7 @@ public class Player : MonoBehaviour
         if (_currentPoints >= _maxPoints)
         {
             GameManager.Instance.EndGame();
+            HighscoreManager.Instance.SavePlayerWin(this);
         }
-    }
+    } 
 }

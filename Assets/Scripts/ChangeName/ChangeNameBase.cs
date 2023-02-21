@@ -10,6 +10,7 @@ public class ChangeNameBase : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _uiTextName;
     [SerializeField] private TMP_InputField _uiInputField;
     [SerializeField] private GameObject _changeNameInput;
+    [SerializeField] private Player _player;
     private string _playerName;
 
     public void ChangeName()
@@ -17,5 +18,6 @@ public class ChangeNameBase : MonoBehaviour
         _playerName = _uiInputField.text;
         _uiTextName.text = _playerName;
         _changeNameInput.SetActive(false);
+        _player.SetName(_playerName);
     }
 }
