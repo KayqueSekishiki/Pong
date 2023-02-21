@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxPoints: 5
   _speed: 20
+  _uiPlayer: {fileID: 867579321649252792}
   _keyCodeMoveUp: 119
   _keyCodeMoveDown: 115
   myRigidBody2D: {fileID: 3558382065952205846}

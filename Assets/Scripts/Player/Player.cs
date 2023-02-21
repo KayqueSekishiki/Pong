@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int _maxPoints;
-    [SerializeField] float _speed;
+    [SerializeField] private int _maxPoints;
+    [SerializeField] private float _speed;
+    [SerializeField] private Image _uiPlayer;
+
+    [Header("Key setup")]
     [SerializeField] KeyCode _keyCodeMoveUp = KeyCode.UpArrow;
     [SerializeField] KeyCode _keyCodeMoveDown = KeyCode.DownArrow;
     [SerializeField] private Rigidbody2D myRigidBody2D;
-    //[SerializeField]
 
     [Header("Points")]
     [SerializeField] private int _currentPoints;
@@ -45,6 +48,11 @@ public class Player : MonoBehaviour
         _currentPoints++;
         UpdateUI();
         CheckMaxPoints();
+    }
+
+    public void ChanceColor(Color c)
+    {
+        _uiPlayer.color = c;
     }
 
     private void UpdateUI()
