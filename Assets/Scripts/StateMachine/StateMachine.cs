@@ -13,6 +13,7 @@ public class StateMachine : MonoBehaviour
     }
 
     public Dictionary<States, StateBase> DictionaryState;
+
     private StateBase _currentState;
     [SerializeField] float timeToStartGame = 1f;
 
@@ -26,17 +27,19 @@ public class StateMachine : MonoBehaviour
         DictionaryState.Add(States.MENU, new StateBase());
         DictionaryState.Add(States.PLAYING, new StatePlaying());
         DictionaryState.Add(States.RESET_POSITION, new StateResetPosition());
-        DictionaryState.Add(States.END_GAME, new StateBase());
+        DictionaryState.Add(States.END_GAME, new StateEndGame());
 
         SwitchStates(States.MENU);
     }
 
 
-    private void SwitchStates(States state)
+    public void SwitchStates(States state)
     {
         if (_currentState != null) _currentState.OnStateExit();
 
         _currentState = DictionaryState[state];
+
+        if (_currentState != null) _currentState.OnStateEnter();
     }
 
     private void Update()

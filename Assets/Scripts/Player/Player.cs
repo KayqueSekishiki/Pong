@@ -5,6 +5,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] int _maxPoints;
     [SerializeField] float _speed;
     [SerializeField] KeyCode _keyCodeMoveUp = KeyCode.UpArrow;
     [SerializeField] KeyCode _keyCodeMoveDown = KeyCode.DownArrow;
@@ -43,10 +44,19 @@ public class Player : MonoBehaviour
     {
         _currentPoints++;
         UpdateUI();
+        CheckMaxPoints();
     }
 
     private void UpdateUI()
     {
         uiTextPoints.text = _currentPoints.ToString();
+    }
+
+    private void CheckMaxPoints()
+    {
+        if (_currentPoints >= _maxPoints)
+        {
+            GameManager.Instance.EndGame();
+        }
     }
 }

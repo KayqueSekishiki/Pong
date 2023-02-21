@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private BallBase _ballBase;
-
     public static GameManager Instance;
-
+    [SerializeField] StateMachine _stateMachine;
+    [SerializeField] private BallBase _ballBase;
     [SerializeField] private float _timeToSetBallFree = 1f;
+
+
+
+    [Header("Menus")]
+    [SerializeField] private GameObject _uiMainMenu;
+
+
 
     private void Awake()
     {
@@ -32,5 +38,15 @@ public class GameManager : MonoBehaviour
         _ballBase.CanMove(true);
     }
 
+    public void EndGame()
+    {
+        _stateMachine.SwitchStates(StateMachine.States.END_GAME);
+    }
+
+    public void ShowMainMenu()
+    {
+        _uiMainMenu.SetActive(true);
+        _ballBase.CanMove(false);
+    }
 
 }
