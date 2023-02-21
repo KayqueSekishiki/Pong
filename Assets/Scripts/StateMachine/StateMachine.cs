@@ -45,11 +45,6 @@ public class StateMachine : MonoBehaviour
     private void Update()
     {
         if (_currentState != null) _currentState.OnStateStay();
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SwitchStates(States.PLAYING);
-        }
     }
 
     public void ResetPosition()
