@@ -7,10 +7,12 @@ public class HighscoreManager : MonoBehaviour
 {
     public static HighscoreManager Instance;
 
-    [SerializeField] private string _keyToSave = "keyHighscore";
+    [SerializeField] private string _keyHighscore = "keyHighscore";
+    [SerializeField] private string _keyWinner = "keyWinner";
 
     [Header("References")]
     [SerializeField] private TextMeshProUGUI uiTextHighscore;
+    [SerializeField] private TextMeshProUGUI _uiTextWinner;
 
     private void Awake()
     {
@@ -24,13 +26,15 @@ public class HighscoreManager : MonoBehaviour
 
     private void UpdateText()
     {
-        uiTextHighscore.text = PlayerPrefs.GetString(_keyToSave, "Sem highscore");
+        uiTextHighscore.text = PlayerPrefs.GetString(_keyHighscore, "Sem highscore");
+        _uiTextWinner.text = PlayerPrefs.GetString(_keyWinner, "Winner: ");
     }
 
     public void SavePlayerWin(Player p)
     {
-        if (p._playerName == "") return;
-        PlayerPrefs.SetString(_keyToSave, p._playerName);
+        if (p.playerName == "") return;
+        PlayerPrefs.SetString(_keyHighscore, p.playerName + ": " + p.currentPoints.ToString() + " Points");
+        PlayerPrefs.SetString(_keyWinner, "Winner: " + p.playerName);
         UpdateText();
     }
 }

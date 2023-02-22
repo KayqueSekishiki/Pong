@@ -6,7 +6,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public string _playerName;
+    public string playerName;
     [SerializeField] private int _maxPoints;
     [SerializeField] private float _speed;
     [SerializeField] private Image _uiPlayer;
@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody2D myRigidBody2D;
 
     [Header("Points")]
-    [SerializeField] private int _currentPoints;
-    [SerializeField] private TextMeshProUGUI uiTextPoints;
+    public int currentPoints;
+    [SerializeField] private TextMeshProUGUI _uiTextPoints;
 
 
     private void Awake()
@@ -28,12 +28,12 @@ public class Player : MonoBehaviour
 
     public void SetName(string s)
     {
-        _playerName = s;
+        playerName = s;
     }
 
     public void ResetPlayer()
     {
-        _currentPoints = 0;
+        currentPoints = 0;
         UpdateUI();
     }
 
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
     public void AddPoint()
     {
-        _currentPoints++;
+        currentPoints++;
         UpdateUI();
         CheckMaxPoints();
     }
@@ -64,15 +64,16 @@ public class Player : MonoBehaviour
 
     private void UpdateUI()
     {
-        uiTextPoints.text = _currentPoints.ToString();
+        _uiTextPoints.text = currentPoints.ToString();
     }
 
     private void CheckMaxPoints()
     {
-        if (_currentPoints >= _maxPoints)
+        if (currentPoints >= _maxPoints)
         {
-            GameManager.Instance.EndGame();
+
             HighscoreManager.Instance.SavePlayerWin(this);
+            GameManager.Instance.EndGame();
         }
-    } 
+    }
 }

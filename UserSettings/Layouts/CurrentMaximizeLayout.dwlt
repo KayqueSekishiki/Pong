@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e0a1fdff
-      m_LastClickedID: -155168
-      m_ExpandedIDs: f830feffe846feff2051feffb27efeff8449ffff26f9ffff72f9ffff26fbffff
+      m_SelectedIDs: 6c93ffff
+      m_LastClickedID: -27796
+      m_ExpandedIDs: 6640fdff4c42fdff26e1fdffe846feff4a47feff2451feff4c77feffaadbffff26f9ffff72f9ffff26fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -557,9 +557,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 758.0031, y: 780.9015, z: 21.279467}
+    m_Target: {x: 932.4814, y: 535.2577, z: -0.14325523}
     speed: 2
-    m_Value: {x: 763.4685, y: 774.06287, z: 21.139675}
+    m_Value: {x: 932.4814, y: 535.2577, z: -0.14325523}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -610,9 +610,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 296.673
+    m_Target: 1016.7441
     speed: 2
-    m_Value: 310.65237
+    m_Value: 1016.7441
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 93527
+  controlID: 141741
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -755,22 +755,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/HighScore
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/HighScore
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Kaique2\Desktop\Projetos de Jogos\EBAC\Pong
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 2.9664803}
-    m_SelectedIDs: 082d0100
-    m_LastClickedID: 77064
-    m_ExpandedIDs: 00000000105d0000505d000000ca9a3bffffff7f
+    m_SelectedIDs: da710000
+    m_LastClickedID: 29146
+    m_ExpandedIDs: 00000000105d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -823,9 +823,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e0a1fdff
-    m_LastClickedInstanceID: -155168
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 6c93ffff
+    m_LastClickedInstanceID: -27796
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -842,7 +842,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -873,8 +873,8 @@ MonoBehaviour:
     y: 0
     width: 860
     height: 383
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -927,8 +927,8 @@ MonoBehaviour:
     y: 0
     width: 603
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}

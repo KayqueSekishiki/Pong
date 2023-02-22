@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BallBase : MonoBehaviour
 {
-    [SerializeField] Vector3 _speed;
-    [SerializeField] Vector3 _startSpeed;
+    [SerializeField] private Vector3 _speed;
+    [SerializeField] private string _keyToCheck = "Player";
 
-    [SerializeField] string _keyToCheck = "Player";
+    [Header("Initial X Ball Speed ")]
+    [SerializeField] private Vector2 _initialSpeedX;
+    [SerializeField] private Vector2 _initialSpeedY;
 
-    [Header("Randomize")]
-    [SerializeField] Vector2 _randSpeedX;
-    [SerializeField] Vector2 _randSpeedY;
+    [Header("Randomize Speed On Player Collision")]
+    [SerializeField] private Vector2 _randSpeedX;
+    [SerializeField] private Vector2 _randSpeedY;
+
 
     private Vector3 _startPosition;
     private bool _canMove = false;
@@ -20,12 +23,19 @@ public class BallBase : MonoBehaviour
     private void Awake()
     {
         _startPosition = transform.position;
-        _startSpeed = _speed;
+        RandomSpeed();
+    }
+
+    private void RandomSpeed()
+    {
+        float rand = Random.Range(_initialSpeedX.x, _initialSpeedX.y);
+        _speed.x = rand;
+        rand = Random.Range(_initialSpeedY.x, _randSpeedY.y);
+        _speed.y = rand;
     }
 
     void Update()
     {
-
         if (!_canMove) return;
         transform.Translate(_speed);
     }
@@ -45,8 +55,8 @@ public class BallBase : MonoBehaviour
     private void OnPlayerCollision()
     {
         _speed.x *= -1;
-        float rand = Random.Range(_randSpeedX.x, _randSpeedX.y);
 
+        float rand = Random.Range(_randSpeedX.x, _randSpeedX.y);
 
         if (_speed.x < 0)
         {
@@ -55,7 +65,7 @@ public class BallBase : MonoBehaviour
 
         _speed.x = rand;
 
-        rand = Random.Range(_randSpeedY.x, _randSpeedY.x);
+        rand = Random.Range(_randSpeedY.x, _randSpeedY.y);
         _speed.y = rand;
 
     }
@@ -63,7 +73,7 @@ public class BallBase : MonoBehaviour
     public void ResetBall()
     {
         transform.position = _startPosition;
-        _speed = _startSpeed;
+        RandomSpeed();
     }
 
     public void CanMove(bool state)

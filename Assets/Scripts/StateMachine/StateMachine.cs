@@ -13,10 +13,7 @@ public class StateMachine : MonoBehaviour
     }
 
     public Dictionary<States, StateBase> DictionaryState;
-
     private StateBase _currentState;
-    [SerializeField] float timeToStartGame = 1f;
-
     public static StateMachine Instance;
 
     private void Awake()
