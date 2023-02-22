@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
     {
         if (currentPoints >= _maxPoints)
         {
-
             HighscoreManager.Instance.SavePlayerWin(this);
             GameManager.Instance.EndGame();
         }

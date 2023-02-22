@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        _ballBase.CanMove(false);
         _stateMachine.SwitchStates(StateMachine.States.END_GAME);
     }
 

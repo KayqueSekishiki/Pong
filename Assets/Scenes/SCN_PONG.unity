@@ -4602,9 +4602,9 @@ MonoBehaviour:
   _speed: {x: 0, y: 0, z: 0}
   _keyToCheck: Player
   _initialSpeedX: {x: -0.25, y: 0.25}
-  _initialSpeedY: {x: -1, y: 1}
-  _randSpeedX: {x: 0.3, y: 0.6}
-  _randSpeedY: {x: -1.5, y: 1.5}
+  _initialSpeedY: {x: -0.5, y: 0.5}
+  _randSpeedX: {x: 0.3, y: 1}
+  _randSpeedY: {x: -1, y: 1}
 --- !u!58 &1977730161
 CircleCollider2D:
   m_ObjectHideFlags: 0
