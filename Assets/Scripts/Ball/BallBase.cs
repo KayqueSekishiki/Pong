@@ -29,7 +29,14 @@ public class BallBase : MonoBehaviour
     private void RandomSpeed()
     {
         float rand = Random.Range(_initialSpeedX.x, _initialSpeedX.y);
-        _speed.x = rand;
+        if (rand >= 0)
+        {
+            _speed.x = _initialSpeedX.y;
+        }
+        else
+        {
+            _speed.x = _initialSpeedX.x;
+        }
         rand = Random.Range(_initialSpeedY.x, _randSpeedY.y);
         _speed.y = rand;
     }
